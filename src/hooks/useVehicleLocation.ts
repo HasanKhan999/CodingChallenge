@@ -17,8 +17,10 @@ export const useVehicleLocation = () => {
         setLocation(res);
 
         // Once initial location is fetched, establish the socket connection to get regular updates of location of vehicle
-
         socket.on("locationUpdate", (newLocation: ILocation) => {
+          if (!newLocation.latitude || !newLocation.longitude) {
+            return Alert.alert("Failed to fetch location");
+          }
           setLocation(newLocation);
         });
       } catch (error) {
