@@ -94,7 +94,7 @@ const Map: FC = () => {
       </View>
       <Spacer mv={10} />
       <Button
-        title={isFollowing ? "Stop Following" : "Follow Marker"}
+        title={isFollowing ? "Stop Following" : "Follow Car"}
         onPress={toggleFollow}
       />
     </View>
